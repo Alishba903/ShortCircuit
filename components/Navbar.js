@@ -12,9 +12,9 @@ const Navbar = () => {
         <Link href="/"><li>About</li></Link>
         <Link href="/"><li>Shorten</li></Link>
         <Link href="/"><li>Contact Us</li></Link>
-        <li>
-          <button>Try Now</button>
-          <button>GitHub</button>
+        <li className="flex gap-3">
+          <Link href="/generate"><button>Try Now</button></Link>
+          <Link href="/github"><button>GitHub</button></Link>
         </li>
       </ul>
     </nav>
