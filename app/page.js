@@ -13,6 +13,7 @@ export default function Home() {
           </p>
         </div>
         <div className="bg-red-500">
+          <Image alt="An Image of a vector" src="vector.img"/>
 
         </div>
 
