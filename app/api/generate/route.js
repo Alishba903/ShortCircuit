@@ -1,11 +1,22 @@
 import clientPromise from "@/lib/mongodb"
 
-export async function POST() {
+export async function POST(request) {
+
+    const body = await request.json();
     const client = await clientPromise;
     const db = client.db("shortcircuit");
     const collection = db.collection("urls");
 
     // check if the short url exists
+    const doc = await collection.findOne({ shortUrl: body.shortUrl})
+    if(doc){
+      return Response.json({success: false, error: true, message: 'URL already exists!' })  
+    }
 
-  return Response.json({ message: 'Hello World' })
+    const result = await collection.insertOne({
+        url: body.url,
+        shortUrl: body.shortUrl,
+    })
+
+  return Response.json({success: true, error: false, message: 'URL shortened successfully' })
 }
