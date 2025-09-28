@@ -1,27 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`]
+
+## ShortCircuit
+
+> A minimal, privacy-friendly URL shortener built with Next.js and MongoDB.
+
+## Features
+- Shorten long URLs with custom short codes
+- No user tracking or login required
+- Clean, minimal UI (gray theme)
+- Built with Next.js App Router and Tailwind CSS
+- MongoDB backend for storing URLs
+
+## Tech Stack
+- Next.js 15 (App Router)
+- React 19
+- Tailwind CSS 4
+- MongoDB
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+```bash
+git clone https://github.com/Alishba903/ShortCircuit.git
+cd ShortCircuit
+```
 
+### 2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Set up environment variables
+Create a `.env.local` file in the root directory:
+
+```
+MONGODB_URI=mongodb://localhost:27017
+NEXT_PUBLIC_HOST=http://localhost:3000
+```
+
+### 4. Start the development server
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [http://localhost:3000](http://localhost:3000) to use the app.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
+- Enter your long URL and a preferred short code on the main page or the **Shorten** page.
+- Click **Generate** to create your short link.
+- Share the generated short link!
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
+- `app/` — Main Next.js app directory (pages, layout, API routes)
+- `components/` — Reusable React components (Navbar, etc.)
+- `lib/` — MongoDB connection helper
+- `public/` — Static assets (images, icons)
 
-## Deploy on Vercel
+## Deployment
+You can deploy this app easily on [Vercel](https://vercel.com/) or any platform that supports Next.js and environment variables.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+MIT
